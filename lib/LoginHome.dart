@@ -26,7 +26,7 @@ class LoginHome extends StatelessWidget {
                             Container(
                               decoration: BoxDecoration(
                                   shape: BoxShape.circle,
-                                  //if isEligible is null then set orange color else if it is true then set green else red
+                         
                                   color: Theme.of(context).accentColor),
                               height: 30,
                               width: 50,
@@ -46,7 +46,7 @@ class LoginHome extends StatelessWidget {
                                 color: Theme.of(context).buttonColor,
                                 textColor: Colors.white,
                                 onPressed: () async {
-                                  //getting the text from TextField and converting it into int
+                               
 
                                   final String email =
                                       emailController.text.trim();
@@ -88,7 +88,7 @@ class LoginHome extends StatelessWidget {
                               alignment: Alignment.center,
                               foregroundDecoration: BoxDecoration(
                                   shape: BoxShape.circle,
-                                  //if isEligible is null then set orange color else if it is true then set green else red
+                           
                                   color: Colors.amberAccent),
                               height: 50,
                               width: 50,

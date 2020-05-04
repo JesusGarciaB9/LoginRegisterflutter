@@ -32,7 +32,7 @@ class SignUp extends StatelessWidget {
                     String passw = passController.text.trim();
                     String email = emailController.text.trim();
                     var value = await signUp(nombre, passw, email, nombre);
-                    sharedcuenta(value, passw, email);
+             
                     Navigator.pop(context);
                   },
                   child: Text('Crear Cuenta'),
@@ -46,14 +46,7 @@ class SignUp extends StatelessWidget {
   }
 }
 
-sharedcuenta(UserInfo value, String passw, String email) async {
-  SharedPreferences prefs = await SharedPreferences.getInstance();
-  await prefs.setString('nombre', value.name);
-  await prefs.setString('contra', passw);
-  await prefs.setString('email', email);
-  await prefs.setString('token', value.token);
-  print('testing ' + value.name);
-}
+
 
 Future<UserInfo> signUp(
     String name, String password, String email, String username) async {

@@ -53,8 +53,8 @@ class ProviderLog extends ChangeNotifier{
        islogged = true;
       estalogeado();
       notifyListeners();
-      return UserInfo.fromJson(json.decode(response.body));
-     
+      var value = UserInfo.fromJson(json.decode(response.body));
+      sharedcuenta(value, contra, email);
     } else {
       print("login failed");
       print('${response.body}');
@@ -73,6 +73,14 @@ class ProviderLog extends ChangeNotifier{
   void checkAccount(String nombre,String pass){
        logear(nombre,pass);
   }
+  sharedcuenta(UserInfo value, String passw, String email) async {
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  await prefs.setString('nombre', value.name);
+  await prefs.setString('contra', passw);
+  await prefs.setString('email', email);
+  await prefs.setString('token', value.token);
+  print('testing1 ' + value.name);
+}
  
  
  
